@@ -984,6 +984,12 @@ class Conduit(Link):
         """
         return self._model.conduit_statistics(self.linkid)
 
+    def set_geom1(self, geom1):
+        return self._model.setConduitGeom1(self.linkid, geom1)
+
+    def set_geom2(self, geom2):
+        return self._model.setConduitGeom2(self.linkid, geom2)
+
 
 class Pump(Link):
     """

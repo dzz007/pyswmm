@@ -1300,6 +1300,14 @@ class PySWMM(object):
         index = self.getObjectIDIndex(tka.ObjectType.NODE.value, ID)
         return solver.storage_set_psi(index, psi)
 
+    def setConduitGeom1(self, ID, geom1):
+        index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
+        return solver.conduit_set_geom1(index, geom1)
+
+    def setConduitGeom2(self, ID, geom2):
+        index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
+        return solver.conduit_set_geom2(index, geom2)    
+
     def outfall_statistics(self, ID):
         """
         Get stats for a Outfall Node.
