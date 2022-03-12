@@ -1368,6 +1368,10 @@ class PySWMM(object):
                 dict_stats[alias[attr]] = getattr(stats, attr)
         return dict_stats
 
+    def pump_set_capacity(self, ID, capacity):
+        index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
+        solver.pump_set_capacity(index, capacity)
+
     def subcatch_statistics(self, ID):
         """
         Get stats for a Subcatchment.

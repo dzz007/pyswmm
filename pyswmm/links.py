@@ -1031,3 +1031,6 @@ class Pump(Link):
         :rtype: dict
         """
         return self._model.pump_statistics(self.linkid)
+
+    def set_capacity(self, capacity):
+        return self._model.pump_set_capacity(self.linkid, capacity)
