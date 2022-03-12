@@ -858,9 +858,9 @@ class Storage(Node):
 
     @property
     def PSI(self):
-        return self._model.getStoragePSI(self._nodeid)
+        return self._model.storage_get_psi(self._nodeid)
 
     @PSI.setter
     def PSI(self, param):
         """Set Node Full Depth."""
-        self._model.setStoragePSI(self._nodeid, param)
+        self._model.storage_set_psi(self._nodeid, param)

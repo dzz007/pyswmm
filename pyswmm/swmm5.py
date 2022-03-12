@@ -1292,21 +1292,29 @@ class PySWMM(object):
                 dict_stats[alias[attr]] = getattr(stats, attr)
         return dict_stats
 
-    def getStoragePSI(self, ID):
+    def storage_get_psi(self, ID):
         index = self.getObjectIDIndex(tka.ObjectType.NODE.value, ID)
         return solver.storage_get_psi(index)
 
-    def setStoragePSI(self, ID, psi):
+    def storage_set_psi(self, ID, psi):
         index = self.getObjectIDIndex(tka.ObjectType.NODE.value, ID)
         return solver.storage_set_psi(index, psi)
 
-    def setConduitGeom1(self, ID, geom1):
+    def conduit_set_geom1(self, ID, geom1):
         index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
         return solver.conduit_set_geom1(index, geom1)
 
-    def setConduitGeom2(self, ID, geom2):
+    def conduit_get_geom1(self, ID):
         index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
-        return solver.conduit_set_geom2(index, geom2)    
+        return solver.conduit_get_geom1(index)
+
+    def conduit_set_geom2(self, ID, geom2):
+        index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
+        return solver.conduit_set_geom2(index, geom2)
+
+    def conduit_get_geom2(self, ID):
+        index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
+        return solver.conduit_get_geom2(index)
 
     def outfall_statistics(self, ID):
         """
@@ -1371,6 +1379,10 @@ class PySWMM(object):
     def pump_set_capacity(self, ID, capacity):
         index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
         solver.pump_set_capacity(index, capacity)
+
+    def pump_get_capacity(self, ID):
+        index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
+        return solver.pump_get_capacity(index)
 
     def subcatch_statistics(self, ID):
         """

@@ -984,12 +984,33 @@ class Conduit(Link):
         """
         return self._model.conduit_statistics(self.linkid)
 
-    def set_geom1(self, geom1):
-        return self._model.setConduitGeom1(self.linkid, geom1)
+    @property
+    def geom1(self):
+        return self._model.conduit_get_geom1(self.linkid)
 
-    def set_geom2(self, geom2):
-        return self._model.setConduitGeom2(self.linkid, geom2)
+    @geom1.setter
+    def geom1(self, geom1):
+        """
+        Set Link Target Setting.
 
+        If Simulation is not running this method will raise a warning and
+        return 0.
+        """
+        return self._model.conduit_set_geom1(self.linkid, geom1)
+
+    @property
+    def geom2(self):
+        return self._model.conduit_get_geom2(self.linkid)
+
+    @geom2.setter
+    def geom2(self, geom2):
+        """
+        Set Link Target Setting.
+
+        If Simulation is not running this method will raise a warning and
+        return 0.
+        """
+        return self._model.conduit_set_geom2(self.linkid, geom2)
 
 class Pump(Link):
     """
@@ -1032,5 +1053,16 @@ class Pump(Link):
         """
         return self._model.pump_statistics(self.linkid)
 
-    def set_capacity(self, capacity):
-        return self._model.pump_set_capacity(self.linkid, capacity)
+    @property
+    def capacity(self):
+        return self._model.pump_get_capacity(self.linkid)
+
+    @capacity.setter
+    def capacity(self, new_capacity):
+        """
+        Set Link Target Setting.
+
+        If Simulation is not running this method will raise a warning and
+        return 0.
+        """
+        return self._model.pump_set_capacity(self.linkid, new_capacity)
