@@ -855,3 +855,12 @@ class Storage(Node):
         :rtype: list
         """
         return self._model.storage_statistics(self.nodeid)
+
+    @property
+    def PSI(self):
+        return self._model.getStoragePSI(self._nodeid)
+
+    @PSI.setter
+    def PSI(self, param):
+        """Set Node Full Depth."""
+        self._model.setStoragePSI(self._nodeid, param)
