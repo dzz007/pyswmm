@@ -1292,6 +1292,14 @@ class PySWMM(object):
                 dict_stats[alias[attr]] = getattr(stats, attr)
         return dict_stats
 
+    def getStoragePSI(self, ID):
+        index = self.getObjectIDIndex(tka.ObjectType.NODE.value, ID)
+        return solver.storage_get_psi(index)
+
+    def setStoragePSI(self, ID, psi):
+        index = self.getObjectIDIndex(tka.ObjectType.NODE.value, ID)
+        return solver.storage_set_psi(index, psi)
+
     def outfall_statistics(self, ID):
         """
         Get stats for a Outfall Node.

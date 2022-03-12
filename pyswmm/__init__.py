@@ -25,6 +25,6 @@ __author__ = 'Bryant E. McDonnell (EmNet LLC) - bemcdonnell@gmail.com'
 __copyright__ = 'Copyright (c) 2016 Bryant E. McDonnell (See AUTHORS)'
 __licence__ = 'BSD2'
 __all__ = [
-    Link, Links, LidControls, LidGroups, Node, Nodes, Subcatchment, Subcatchments, Simulation,
-    SystemStats, RainGages, RainGage, Output
+    "Link", "Links", "LidControls", "LidGroups", "Node", "Nodes", "Subcatchment", "Subcatchments", "Simulation",
+    "SystemStats", "RainGages", "RainGage", "Output"
 ]
