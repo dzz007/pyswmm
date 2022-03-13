@@ -985,6 +985,10 @@ class Conduit(Link):
         return self._model.conduit_statistics(self.linkid)
 
     @property
+    def length(self):
+        return self._model.conduit_get_length(self.linkid)
+
+    @property
     def geom1(self):
         return self._model.conduit_get_geom1(self.linkid)
 

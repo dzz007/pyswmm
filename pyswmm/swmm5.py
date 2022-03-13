@@ -1316,6 +1316,10 @@ class PySWMM(object):
         index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
         return solver.conduit_get_geom2(index)
 
+    def conduit_get_length(self, ID):
+        index = index = self.getObjectIDIndex(tka.ObjectType.LINK.value, ID)
+        return solver.conduit_get_length(index)
+
     def outfall_statistics(self, ID):
         """
         Get stats for a Outfall Node.

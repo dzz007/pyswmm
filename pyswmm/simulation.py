@@ -111,7 +111,7 @@ class Simulation(object):
                 self._initial_conditions()
             # Execute Callback Hooks Before Simulation
             self._execute_callback(self.before_start())
-            self._model.swmm_start(True)
+            self._model.swmm_start(False)   # dzz change, don't save detail report
             self._isStarted = True
 
     def __next__(self):
